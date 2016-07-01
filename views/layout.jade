@@ -2,6 +2,59 @@ doctype html
 html
   head
     title= title
+    meta(name='description' content='Webseite für Xbox Rennserien')
+    meta(name='author' content='Benedict Kempkes')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    #wrapper
+      #sidebar-wrapper
+        ul.sidebar-nav
+          li.sidebar-brand
+            a(href='#') XBOX-GSR
+          li 
+            button.btn-block.firstLevelDropdown(data-toggle='collapse' data-target='#artikel-dropdown') Artikel
+            #artikel-dropdown.collapse
+              button.btn-block.firstLevelDropdown News
+              button.btn-block.firstLevelDropdown Rennberichte
+              button.btn-block.firstLevelDropdown Ankündigung
+          li
+            button.btn-block.firstLevelDropdown(data-toggle='collapse' data-target='#forza-dropdown') Forza Motorsport
+            #forza-dropdown.collapse
+              p Hallo
+          li 
+            button.btn-block.firstLevelDropdown(data-toggle='collapse' data-target='#project-dropdown') Project Cars
+            #project-dropdown.collapse
+              p Hallo
+          li
+            button.btn-block.firstLevelDropdown(data-toggle='collapse' data-target='#stats-dropdown') Statistiken
+            #stats-dropdown.collapse
+              p Hallo
+          li
+            button.btn-block.firstLevelDropdown(data-toggle='collapse' data-target='#forum-dropdown') Forum
+            #forum-dropdown.collapse
+              p Hallo
+      #header-wrapper
+        nav.navbar.navbar-static-top(role='navigation', style='margin-bottom: 0')
+          .container-fluid
+            .collapse.navbar-collapse
+              form.navbar-form.navbar-right(role='navigation')
+                .form-group
+                  input.form-control(type='text', placeholder='Benutzer')
+                .form-group  
+                  input.form-control(type='text', placeholder='Passwort')
+                button.btn.btn-default(type='submit') Anmelden
+      #page-content-wrapper
+        .container-fluid
+          p Benedict Kempkes 
+          p 01:53:79
+          p Frederic Kempkes 02:40:68
+          block content
+        
+      
+  
+    script(type='text/javascript' src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js')
+    script(type='text/javascript' src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
