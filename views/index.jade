@@ -1,5 +1,47 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+block body
+  script(type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js")
+  script(type='text/javascript' src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js")
+  div(ng-app='gsr' ng-controller='page-ctrl')
+    //Top-Navbar
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          a#brand.navbar-brand(href="#") GSR
+        #selectedTopic
+          h1 {{ title || "News" }}
+    //Content page
+    .container-fluid
+      .row
+        //Sidebar
+        .col-md-2.sidebar
+          div(ng-controller='sidebar-ctrl', ng-model='selectedTopic')
+            ul.nav.nav-sidebar
+              li 
+                a(href="#news", ng-click="changeTitle('News')") News
+              li 
+                a(href="", ng-click="showFMSeries()") Forza Motorsport 
+                  span.glyphicon.glyphicon-menu-down.pull-right(ng-hide="showFMMore")
+                  div(ng-show="listFMSeries")
+                    ul(style="list-style-type:none")
+                      li(ng-repeat="serie in FMSerien")
+                        a.secondLevel(href="#serie", ng-click="changeTitle(serie.title)") {{serie.title}}
+              li 
+                a(href="", ng-click="showPCSeries()") Project Cars 
+                  span.glyphicon.glyphicon-menu-down.pull-right(ng-hide="showPCMore")
+                  div(ng-show="listPCSeries")
+                    a.secondLevel(href="#serie", ng-click="changeTitle('TestSerie')") TestSerie
+                    
+              li
+                a(href="#serie", ng-click="changeTitle('Statistiken')") Statistiken
+              li
+                a(href="#contact", ng-click="changeTitle('Kontakt')") Kontakt
+        // Content
+        .col-md-10.col-md-offset-2
+            div(ng-view='')
+
+    script(type='text/javascript' src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js')
+    script(type='text/javascript' src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    script(type='text/javascript' src='/javascripts/gsr.js')
+    script(type='text/javascript' src='/javascripts/controller.js')
