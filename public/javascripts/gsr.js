@@ -2,13 +2,19 @@ var app = angular.module('gsr', ["ngRoute"]);
 
 app.config(function($routeProvider) {
     $routeProvider
-    .when("/serie", {
-        templateUrl : 'partials/serie'
+    .when("/fmView", {
+        templateUrl : 'partials/fmView'
     })
-    .when("/contact", {
-        templateUrl : 'partials/contact'
+    .when("/pcView", {
+        templateUrl : 'partials/pcView'
+    })
+    .when("/statView", {
+        templateUrl : 'partials/statView'
+    })
+    .when("/contView", {
+        templateUrl : 'partials/contView'
     })
     .otherwise({
-        templateUrl : 'partials/news'
+        templateUrl : 'partials/newsView'
     });
 });

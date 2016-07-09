@@ -3,43 +3,30 @@ extends layout
 block body
   script(type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js")
   script(type='text/javascript' src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js")
-  div(ng-app='gsr' ng-controller='page-ctrl')
-    //Top-Navbar
-    nav.navbar.navbar-default
-      .container-fluid
-        .navbar-header
-          a#brand.navbar-brand(href="#") GSR
-        #selectedTopic
-          h1 {{ title || "News" }}
-    //Content page
-    .container-fluid
-      .row
-        //Sidebar
-        .col-md-2.sidebar
-          div(ng-controller='sidebar-ctrl', ng-model='selectedTopic')
-            ul.nav.nav-sidebar
-              li 
-                a(href="#news", ng-click="changeTitle('News')") News
-              li 
-                a(href="", ng-click="showFMSeries()") Forza Motorsport 
-                  span.glyphicon.glyphicon-menu-down.pull-right(ng-hide="showFMMore")
-                  div(ng-show="listFMSeries")
-                    ul(style="list-style-type:none")
-                      li(ng-repeat="serie in FMSerien")
-                        a.secondLevel(href="#serie", ng-click="changeTitle(serie.title)") {{serie.title}}
-              li 
-                a(href="", ng-click="showPCSeries()") Project Cars 
-                  span.glyphicon.glyphicon-menu-down.pull-right(ng-hide="showPCMore")
-                  div(ng-show="listPCSeries")
-                    a.secondLevel(href="#serie", ng-click="changeTitle('TestSerie')") TestSerie
-                    
-              li
-                a(href="#serie", ng-click="changeTitle('Statistiken')") Statistiken
-              li
-                a(href="#contact", ng-click="changeTitle('Kontakt')") Kontakt
-        // Content
-        .col-md-10.col-md-offset-2
-            div(ng-view='')
+  div(ng-app='gsr' ng-controller='page-ctrl')  
+    #wrapper
+      //Sidebar
+      #sidebar-wrapper
+        ul.sidebar-nav
+          li.sidebar-brand
+            a(href="#newsView") GSR
+          li 
+            a.navLink(href="#newsView") News
+          li 
+            a.navLink(href="#fmView") Forza Motorsport 
+          li 
+            a.navLink(href="#pcView") Project Cars
+          li
+            a.navLink(href="#statView") Statistiken
+          li
+            a.navLink(href="#contView") Kontakt
+      // Content
+      #page-content-wrapper
+        .container-fluid
+          .row
+            .col-lg-12
+              div(ng-view='')
+                
 
     script(type='text/javascript' src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js')
     script(type='text/javascript' src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
