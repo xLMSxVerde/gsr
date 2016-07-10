@@ -23,11 +23,9 @@ block body
       // Content
       #page-content-wrapper
         .container-fluid
-          .row
-            .col-lg-12
-              div(ng-view='')
-                
-
+          #content
+            div(ng-view='')
+    
     script(type='text/javascript' src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js')
     script(type='text/javascript' src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
     script(type='text/javascript' src='/javascripts/gsr.js')
