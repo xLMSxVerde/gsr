@@ -1,14 +1,37 @@
 [
   {
     "id": 1,
-    "title": "DTM-Revival"
+    "Titel": "Toyota GT 86 Cup",
+    "Laeufe": 11,
+    "Hinweise": ["-"],
+    "Fahrzeuge": ["Toyota GT 86"],
+    "Setup": ["Klasse: A650", "Name: GSR CUP", "Ersteller: GSR tobination"],
+    "Regeln": ["Handschaltung mit Kupplung ist nicht erlaubt"],
+    "Punktesystem" : "25-20-16-13-11-10-9-8-7-6-5-4-3-2-1",
+    "wa" : ["3 Runden"],
+    "q1" : ["2 Runden"],
+    "r1" : ["Startaufstellung: Qualifying 1 - Ergebnis", "Sprintrennen über 10 Runden", "Stehender Start"],
+    "q2" : ["-"],
+    "r2" : ["Startaufstellung: Ergebnis von Lauf 1 umgedreht", "Einführungsrunde mit max. 120km/h",
+    "Fliegender Start erfolgt versetzt mit ca 89 km/h ab Start/Ziel-Linie", "Rennen 60 Minuten", "2 Pflichtboxenstopp",
+    "Einfahrt zum letzten Boxenstopp spätestens 5 min vor Rennende"]
   },
   {
     "id": 2,
-    "title": "Toyota GT 86"
-  },
-  {
-    "id": 3,
-    "title": "WEC Sprint Series"
+    "Titel": "DTM-Revival",
+    "Laeufe": 10,
+    "Hinweise": ["Jeder Fahrer muss pro Lauf ein festes Fahrzeug auswählen", "Für beide Läufe das gleiche Fahrzeug zu verwenden ist nicht erlaubt",
+      "Die 2 gewählten Fahrzeuge müssen immer im jeweiligen Lauf gefahren werden", "Der Fahrzeugwechsel während der Meisterschaft ist nicht erlaubt"],
+    "Fahrzeuge": ["1992 Alfa-Romeo 155 Q4", "1991 BMW M3 E30", "1986 BMW M635CSi", "1987 Ford Sierra Cosworth RS500", "1993 Ford SVT Cobra R", "1990 Mercedes-Benz 190E 2.5-16 Evo II"],
+    "Setup": ["Klasse: B597, Name: DTM-REVIVAL, Ersteller: GSR tobination"],
+    "Regeln": ["Handschaltung mit Kupplung ist nicht erlaubt", "Der BMW M3 E30 erhält ein Leistungshandicap von 5%"],
+    "Punktesystem" : "25-20-16-13-11-10-9-8-7-6-5-4-3-2-1",
+    "wa" : ["3 Runden vor jedem Qualifying"],
+    "q1" : ["3 Runden"],
+    "r1" : ["Einführungsrunde mit max. 120km/h", "Fliegender Start erfolgt versetzt mit ca 89 km/h ab Start/Ziel-Linie", "Rennen 30 Minuten",
+       "1 Pflichtboxenstopp", "Einfahrt zum letzten Boxenstopp spätestens 5 min vor Rennende"],
+    "q2" : ["3 Runden"],
+    "r2" : ["Einführungsrunde mit max. 120km/h", "Fliegender Start erfolgt versetzt mit ca 89 km/h ab Start/Ziel-Linie", "Rennen 30 Minuten",
+       "1 Pflichtboxenstopp", "Einfahrt zum letzten Boxenstopp spätestens 5 min vor Rennende"]
   }
 ]
