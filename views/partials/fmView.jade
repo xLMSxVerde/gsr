@@ -1,14 +1,15 @@
 .btn-group.btn-group-justified(data-toggle='buttons')
   .btn-group(role='group', ng-repeat="serien in FMSerien")
-    button.btn.btn-default.stay(ng-click="serie($index)") {{serien.Titel}}
-      
-.btn-group.btn-group-justified(data-toggle='buttons')
-  .btn-group(role='group', ng-click="update(1)")
-    button.btn.btn-default.stay Informationen
-  .btn-group(role='group', ng-click="update(2)")
-    button.btn.btn-default.stay Rennergebnisse
-  .btn-group(role='group', ng-click="update(3)")
-    button.btn.btn-default.stay WM Stand
+    button.btn.btn-default.stay(ng-click="update($index)") {{serien.Titel}}
+
+div(ng-show="secondLevelButtons")    
+  .btn-group.btn-group-justified(data-toggle='buttons')
+    .btn-group(role='group', ng-click="update(-1)")
+      button.btn.btn-default.stay.enabled Informationen
+    .btn-group(role='group', ng-click="update(-2)")
+      button.btn.btn-default.stay Rennergebnisse
+    .btn-group(role='group', ng-click="update(-3)")
+      button.btn.btn-default.stay WM Stand
 
 div.serieInformation(ng-controller='details-ctrl')
   div(ng-show="Informationen")
@@ -19,12 +20,14 @@ div.serieInformation(ng-controller='details-ctrl')
             p
               b Titel
               br 
-              span {{ Titel }}
+              ul
+                li {{ Titel }}
           li.list-group-item
             p
               b Läufe Insgesamt
               br 
-              span {{ Laeufe }}
+              ul
+                li {{ Laeufe }}
           li.list-group-item
             p
               b Hinweise
@@ -53,12 +56,13 @@ div.serieInformation(ng-controller='details-ctrl')
             p
               b Punktesystem
               br 
-              span {{ Punktesystem }}
+              ul
+                li {{ Punktesystem }}
       .col-md-6
         ul.list-group
           li.list-group-item
             p
-              b wa
+              b Warm-Up
               br 
               ul
                 li(ng-repeat="wa in wa track by $index") {{ wa }}
@@ -87,6 +91,89 @@ div.serieInformation(ng-controller='details-ctrl')
               ul
                 li(ng-repeat="r2 in r2 track by $index") {{ r2 }}
   div(ng-show="Results")
-    p Results zu {{ Titel }}
+    .btn-group.btn-group-justified(data-toggle='buttons')
+      .btn-group(role='group', ng-repeat="button in buttonLaeufe")
+        button.btn.btn-default.stay(ng-click="selectLauf(button)") {{button}}
+    div(ng-show="selectedResults")
+      .row
+        .col-md-6
+          div(ng-show="race1")
+            h2 Lauf 1
+            table.table.table-striped
+              thead
+                tr
+                  th POS
+                  th Fahrer
+                  th Klasse
+                  th Auto
+                  th Beste
+                  th Gesamt
+              tbody(ng-repeat="results in resultR1 track by $index")
+                tr
+                  td {{$index + 1}}
+                  td {{results[0]}}
+                  td {{results[1]}}
+                  td {{results[2]}}
+                  td {{results[3]}}
+                  td {{results[4]}}
+          div(ng-show="qualy1")
+            h2 Qualy 1
+            table.table.table-striped
+              thead
+                tr
+                  th POS
+                  th Fahrer
+                  th Klasse
+                  th Auto
+                  th Beste
+                  th Gesamt
+              tbody(ng-repeat="results in resultR1 track by $index")
+                tr
+                  td {{$index + 1}}
+                  td {{results[0]}}
+                  td {{results[1]}}
+                  td {{results[2]}}
+                  td {{results[3]}}
+                  td {{results[5]}}
+        .col-md-6
+          div(ng-show="race2")
+            h2 Lauf 2
+            table.table.table-striped
+              thead
+                tr
+                  th POS
+                  th Fahrer
+                  th Klasse
+                  th Auto
+                  th Beste
+                  th Gesamt
+              tbody(ng-repeat="results in resultR1 track by $index")
+                tr
+                  td {{$index + 1}}
+                  td {{results[0]}}
+                  td {{results[1]}}
+                  td {{results[2]}}
+                  td {{results[3]}}
+                  td {{results[4]}}
+          div(ng-show="qualy2")
+            h2 Qualy 1
+            table.table.table-striped
+              thead
+                tr
+                  th POS
+                  th Fahrer
+                  th Klasse
+                  th Auto
+                  th Beste
+                  th Gesamt
+              tbody(ng-repeat="results in resultR1 track by $index")
+                tr
+                  td {{$index + 1}}
+                  td {{results[0]}}
+                  td {{results[1]}}
+                  td {{results[2]}}
+                  td {{results[3]}}
+                  td {{results[5]}}
+          
   div(ng-show="Standings")
     p Standings zu {{ Titel }}

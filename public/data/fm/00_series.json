@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "01_toyota.json",
     "Titel": "Toyota GT 86 Cup",
     "Laeufe": 11,
     "Hinweise": ["-"],
@@ -17,7 +17,7 @@
     "Einfahrt zum letzten Boxenstopp spätestens 5 min vor Rennende"]
   },
   {
-    "id": 2,
+    "id": "02_dtm_revival.json",
     "Titel": "DTM-Revival",
     "Laeufe": 10,
     "Hinweise": ["Jeder Fahrer muss pro Lauf ein festes Fahrzeug auswählen", "Für beide Läufe das gleiche Fahrzeug zu verwenden ist nicht erlaubt",
